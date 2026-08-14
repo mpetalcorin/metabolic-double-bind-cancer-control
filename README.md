@@ -1,438 +1,1 @@
-# Metabolic Double-Bind Cancer Control
-
-A computational proof-of-concept framework for the **Metabolic Double-Bind Cancer Control hypothesis**, integrating tumour metabolic plasticity, glycolysis, oxidative phosphorylation, glutamine metabolism, fatty-acid metabolism, lactate shuttling, mitochondrial function, apoptosis resistance, host metabolic fitness, exercise, nutrition, and machine learning.
-
-The central hypothesis is:
-
-> **Preserve and strengthen host metabolic fitness while identifying and constraining the tumour's dominant metabolic dependency together with its principal metabolic escape route.**
-
-This repository accompanies a planned review paper and provides a reproducible, literature-informed computational model for exploring this concept.
-
----
-
-## Concept
-
-Cancer metabolism is more complex than the classical idea that tumour cells rely exclusively on glucose fermentation because their mitochondria are defective.
-
-Many cancer cells retain functional mitochondria and can use multiple fuels, including:
-
-- glucose,
-- glutamine,
-- fatty acids,
-- lactate,
-- mitochondrial oxidative phosphorylation.
-
-This metabolic flexibility allows tumour cells to survive when one pathway becomes restricted.
-
-The **Metabolic Double-Bind Cancer Control hypothesis** therefore proposes three simultaneous objectives:
-
-1. identify the tumour's dominant metabolic dependency,
-2. identify and constrain its major compensatory or escape pathway,
-3. preserve host muscle, mitochondrial function, nutritional status, metabolic fitness, and systemic resilience.
-
-Conceptually:
-
-```text
-Tumour metabolic pressure
-        +
-Blocked metabolic escape
-        +
-Strong host metabolism
-        ‚Üì
-Improved tumour-host metabolic asymmetry
-```
-
-The goal is **not whole-body starvation**. The goal is to increase selective metabolic pressure on the tumour while minimizing metabolic damage to normal tissues.
-
----
-
-## Scientific Rationale
-
-Cancer cells must satisfy several biochemical requirements simultaneously:
-
-```text
-Energy + Reducing power + Biosynthetic precursors
-```
-
-or approximately:
-
-```text
-ATP + NADPH + carbon/nitrogen building blocks
-```
-
-Aerobic glycolysis may therefore benefit proliferating cancer cells even when mitochondrial oxidative phosphorylation remains functional.
-
-The framework also distinguishes:
-
-```text
-Mitochondrial bioenergetics
-```
-
-from:
-
-```text
-Mitochondrial apoptosis competence
-```
-
-A cancer cell may retain substantial mitochondrial respiration while resisting intrinsic apoptosis through altered BCL-2-family signalling.
-
----
-
-## Repository Contents
-
-```text
-metabolic-double-bind-cancer-control/
-‚îú‚îÄ‚îÄ notebooks/
-‚îÇ   ‚îî‚îÄ‚îÄ cancer_metabolic_double_bind_proof_of_concept.ipynb
-‚îú‚îÄ‚îÄ figures/
-‚îÇ   ‚îî‚îÄ‚îÄ metabolic_double_bind_cancer_control_infographic.png
-‚îú‚îÄ‚îÄ outputs/
-‚îÇ   ‚îî‚îÄ‚îÄ cancer_metabolic_double_bind_outputs.zip
-‚îî‚îÄ‚îÄ README.md
-```
-
-The output archive contains:
-
-- synthetic tumour-host cohort data,
-- scenario-level simulation results,
-- metabolic cluster profiles,
-- sensitivity analyses,
-- bootstrap comparisons,
-- literature benchmark tables,
-- publication-resolution PNG figures,
-- publication-resolution PDF figures.
-
----
-
-## Computational Proof of Concept
-
-The notebook generates **2,400 synthetic tumour-host profiles** representing five broad metabolic phenotypes:
-
-- Glycolytic,
-- Glutamine-dependent,
-- OXPHOS-dependent,
-- Fatty-acid/lipid-dependent,
-- Metabolically plastic.
-
-Each virtual tumour is assigned continuous metabolic dependency scores rather than a single fixed identity.
-
-The simulated system includes:
-
-- glucose dependency,
-- glutamine dependency,
-- OXPHOS dependency,
-- fatty-acid dependency,
-- metabolic plasticity,
-- mitochondrial capacity,
-- glycolytic activity,
-- lactate-shuttle capacity,
-- methionine dependence,
-- redox demand,
-- biosynthetic demand,
-- apoptosis resistance.
-
-Host variables include:
-
-- skeletal lean mass,
-- fitness,
-- insulin sensitivity,
-- nutritional reserve,
-- cachexia vulnerability.
-
----
-
-## Simulated Metabolic Pressure Scenarios
-
-The notebook compares several abstract perturbation strategies:
-
-```text
-Baseline
-Glucose pressure
-Methionine pressure
-OXPHOS pressure
-Global restriction
-Fixed double bind
-Adaptive double bind
-Adaptive double bind + host support
-```
-
-These variables are **not clinical diets, drug regimens, or treatment recommendations**.
-
-They are computational perturbations designed to test biological principles.
-
----
-
-## Therapeutic Window
-
-The main systems-level outcome is defined as:
-
-```text
-Therapeutic window
-=
-Tumour suppression
--
-Host metabolic cost
-```
-
-This captures the central idea that a strategy should not be judged only by how strongly it suppresses tumour metabolism.
-
-A metabolically aggressive intervention may be undesirable if it damages skeletal muscle, nutritional reserve, mitochondrial function, immune competence, or systemic physiology to a similar or greater extent.
-
----
-
-## Main Proof-of-Concept Findings
-
-### 1. Glycolysis and mitochondrial function can coexist
-
-The model deliberately allows highly glycolytic cancer cells to retain substantial mitochondrial activity.
-
-This reflects contemporary cancer-metabolism biology and avoids the assumption that all Warburg-like tumours have non-functional mitochondria.
-
-### 2. Metabolic plasticity enables escape
-
-Among glucose-dependent virtual tumours, increasing metabolic plasticity strongly reduced simulated response to glucose-only pressure.
-
-This illustrates the proposed escape sequence:
-
-```text
-Glucose pressure
-      ‚Üì
-Metabolic adaptation
-      ‚Üì
-Glutamine / OXPHOS / fatty acids / lactate
-      ‚Üì
-Continued tumour survival
-```
-
-### 3. Double-binding can outperform single-pathway pressure
-
-The adaptive double-bind strategy identifies each tumour's two strongest metabolic dependencies and constrains them simultaneously.
-
-The model predicts a larger tumour-host metabolic asymmetry than single-pathway or nonspecific restriction strategies.
-
-### 4. Host protection matters
-
-Global metabolic restriction can place substantial stress on normal tissues.
-
-When host metabolic support is incorporated into the model, the simulated therapeutic window improves.
-
-### 5. Cachexia is a major boundary condition
-
-Increasing host cachexia vulnerability reduces the usefulness of nonspecific global metabolic restriction.
-
-This supports treating skeletal muscle and nutritional reserve as active components of cancer-metabolism research.
-
-### 6. Mitochondrial respiration is not equivalent to apoptosis
-
-The simulation treats mitochondrial respiratory capacity and apoptosis resistance as separate biological dimensions.
-
-This reflects the fact that cancer cells may maintain oxidative metabolism while suppressing intrinsic apoptotic signalling.
-
----
-
-## Metabolic Dependency Score
-
-A future experimental implementation could integrate:
-
-```text
-Transcriptomics
-        +
-Proteomics
-        +
-Metabolomics
-        +
-Stable-isotope tracing
-        +
-OCR / ECAR
-        +
-Clinical and host metabolic variables
-        ‚Üì
-Metabolic Dependency Score
-```
-
-Candidate pathways and biomarkers include:
-
-- GLUT1,
-- HK2,
-- PFKFB3,
-- PKM2,
-- LDHA,
-- MCT1,
-- MCT4,
-- GLS1,
-- CPT1A,
-- FASN,
-- electron-transport-chain complexes,
-- AMPK,
-- AKT,
-- mTOR,
-- MYC,
-- HIF-1Œ±,
-- BCL-2,
-- MCL1,
-- BAX,
-- BAK.
-
----
-
-## Machine Learning
-
-The notebook includes a proof-of-concept machine-learning workflow using a random forest classifier.
-
-The model predicts synthetic response to adaptive metabolic double-binding from tumour metabolic features.
-
-This analysis is included to demonstrate the future workflow:
-
-```text
-Metabolic measurements
-        ‚Üì
-Dependency features
-        ‚Üì
-Predictive model
-        ‚Üì
-Experimental validation
-        ‚Üì
-Prospective external validation
-```
-
-High predictive performance in the synthetic dataset must **not** be interpreted as clinical predictive performance because the outcome is generated from the same computational framework.
-
----
-
-## Figures
-
-The notebook generates 13 publication-resolution figures:
-
-1. Heterogeneous tumour fuel dependencies.
-2. Glycolysis versus mitochondrial capacity.
-3. Single-pathway versus double-bind tumour suppression.
-4. Therapeutic-window comparison.
-5. Metabolic phenotype √ó intervention-response heatmap.
-6. Metabolic plasticity and escape from glucose pressure.
-7. Mitochondrial capacity versus apoptosis resistance.
-8. Cachexia vulnerability and global metabolic restriction.
-9. PCA-based metabolic tumour stratification.
-10. Machine-learning ROC curve.
-11. Metabolic feature importance.
-12. Double-bind sensitivity analysis.
-13. Published CHALLENGE exercise-trial benchmark.
-
-
----
-
-## Proposed Experimental Validation
-
-The computational model generates experimentally testable predictions.
-
-A translational validation programme could include:
-
-1. extracellular flux analysis of OCR and ECAR,
-2. ATP-linked respiration and spare respiratory capacity,
-3. U-13C-glucose tracing,
-4. U-13C-glutamine tracing,
-5. labelled fatty-acid tracing,
-6. lactate production and uptake measurements,
-7. ATP and NADPH quantification,
-8. GSH/GSSG measurements,
-9. nucleotide-pool profiling,
-10. one-carbon and methionine-cycle metabolomics,
-11. apoptosis assays,
-12. matched tumour and non-malignant cell comparisons,
-13. patient-derived organoid studies,
-14. appropriate in vivo validation,
-15. prospective metabolic biomarker validation.
-
-The most important experimental question is:
-
-> **Can a tumour's dominant metabolic dependency and compensatory escape pathway be identified and constrained more selectively than host metabolism?**
-
----
-
-## Key PubMed-Indexed Literature
-
-Vander Heiden MG, Cantley LC, Thompson CB. Understanding the Warburg effect: the metabolic requirements of cell proliferation. *Science*. 2009;324:1029-1033. PMID: 19460998.  
-https://pubmed.ncbi.nlm.nih.gov/19460998/
-
-Sullivan LB, et al. Supporting aspartate biosynthesis is an essential function of respiration in proliferating cells. *Cell*. 2015. PMID: 26232224.  
-https://pubmed.ncbi.nlm.nih.gov/26232224/
-
-Gao X, et al. Dietary methionine influences therapy in mouse cancer models and alters human metabolism. *Nature*. 2019;572:397-401. PMID: 31367041.  
-https://pubmed.ncbi.nlm.nih.gov/31367041/
-
-Vernieri C, et al. Fasting-mimicking diet is safe and reshapes metabolism and antitumor immunity in patients with cancer. *Cancer Discovery*. 2022;12:90-107. PMID: 34789537.  
-https://pubmed.ncbi.nlm.nih.gov/34789537/
-
-Courneya KS, et al. Structured Exercise after Adjuvant Chemotherapy for Colon Cancer. *New England Journal of Medicine*. 2025. PMID: 40450658.  
-https://pubmed.ncbi.nlm.nih.gov/40450658/
-
-Additional PubMed-indexed references and benchmark notes are included directly in the notebook.
-
----
-
-## Important Limitations
-
-This repository contains **synthetic data only**.
-
-The simulations are intended for:
-
-- hypothesis generation,
-- systems-level reasoning,
-- computational method development,
-- review-paper illustration,
-- experimental-design development.
-
-They do not demonstrate that any dietary intervention, fasting regimen, exercise programme, metabolic inhibitor, or nutrient-restriction strategy cures cancer.
-
-The model is deliberately simplified and does not yet incorporate the full complexity of:
-
-- tumour microenvironment,
-- stromal metabolism,
-- immune-cell metabolism,
-- tumour perfusion,
-- spatial nutrient gradients,
-- hypoxia,
-- clonal evolution,
-- treatment resistance,
-- pharmacokinetics,
-- pharmacodynamics,
-- toxicity,
-- inter-patient heterogeneity.
-
-Any clinical application would require rigorous experimental testing and prospective validation.
-
----
-
-## Central Hypothesis
-
-The framework can be summarized as:
-
-```text
-Metabolic Double-Bind Cancer Control
-=
-Identify primary tumour dependency
-+
-Identify metabolic escape route
-+
-Constrain both
-+
-Preserve host metabolic fitness
-```
-
-or more simply:
-
-> **Weaken tumour metabolism while strengthening host metabolism.**
-
----
-
-## License
-
-MIT
-
----
-
-## Author
-
-**Mark I. R. Petalcorin**
-
-Molecular Biology, Biochemistry, Cancer Biology, Bioenergetics, Machine Learning and Artificial Intelligence
-
+# Metabolic Double-Bind Cancer ControlA computational proof-of-concept framework for the **Metabolic Double-Bind Cancer Control hypothesis**, integrating tumour metabolic plasticity, glycolysis, oxidative phosphorylation, glutamine metabolism, fatty-acid metabolism, lactate shuttling, mitochondrial function, apoptosis resistance, host metabolic fitness, exercise, nutrition, and machine learning.The central hypothesis is:> **Preserve and strengthen host metabolic fitness while identifying and constraining the tumour's dominant metabolic dependency together with its principal metabolic escape route.**This repository accompanies a planned review paper and provides a reproducible, literature-informed computational model for exploring this concept.---## ConceptCancer metabolism is more complex than the classical idea that tumour cells rely exclusively on glucose fermentation because their mitochondria are defective.Many cancer cells retain functional mitochondria and can use multiple fuels, including:- glucose,- glutamine,- fatty acids,- lactate,- mitochondrial oxidative phosphorylation.This metabolic flexibility allows tumour cells to survive when one pathway becomes restricted.The **Metabolic Double-Bind Cancer Control hypothesis** therefore proposes three simultaneous objectives:1. identify the tumour's dominant metabolic dependency,2. identify and constrain its major compensatory or escape pathway,3. preserve host muscle, mitochondrial function, nutritional status, metabolic fitness, and systemic resilience.Conceptually:```textTumour metabolic pressure        +Blocked metabolic escape        +Strong host metabolism        ↓Improved tumour-host metabolic asymmetry```The goal is **not whole-body starvation**. The goal is to increase selective metabolic pressure on the tumour while minimizing metabolic damage to normal tissues.---## Scientific RationaleCancer cells must satisfy several biochemical requirements simultaneously:```textEnergy + Reducing power + Biosynthetic precursors```or approximately:```textATP + NADPH + carbon/nitrogen building blocks```Aerobic glycolysis may therefore benefit proliferating cancer cells even when mitochondrial oxidative phosphorylation remains functional.The framework also distinguishes:```textMitochondrial bioenergetics```from:```textMitochondrial apoptosis competence```A cancer cell may retain substantial mitochondrial respiration while resisting intrinsic apoptosis through altered BCL-2-family signalling.---## Repository Contents```textmetabolic-double-bind-cancer-control/├── notebooks/│   └── cancer_metabolic_double_bind_proof_of_concept.ipynb├── figures/│   └── metabolic_double_bind_cancer_control_infographic.png├── outputs/│   └── cancer_metabolic_double_bind_outputs.zip└── README.md```The output archive contains:- synthetic tumour-host cohort data,- scenario-level simulation results,- metabolic cluster profiles,- sensitivity analyses,- bootstrap comparisons,- literature benchmark tables,- publication-resolution PNG figures,- publication-resolution PDF figures.---## Computational Proof of ConceptThe notebook generates **2,400 synthetic tumour-host profiles** representing five broad metabolic phenotypes:- Glycolytic,- Glutamine-dependent,- OXPHOS-dependent,- Fatty-acid/lipid-dependent,- Metabolically plastic.Each virtual tumour is assigned continuous metabolic dependency scores rather than a single fixed identity.The simulated system includes:- glucose dependency,- glutamine dependency,- OXPHOS dependency,- fatty-acid dependency,- metabolic plasticity,- mitochondrial capacity,- glycolytic activity,- lactate-shuttle capacity,- methionine dependence,- redox demand,- biosynthetic demand,- apoptosis resistance.Host variables include:- skeletal lean mass,- fitness,- insulin sensitivity,- nutritional reserve,- cachexia vulnerability.---## Simulated Metabolic Pressure ScenariosThe notebook compares several abstract perturbation strategies:```textBaselineGlucose pressureMethionine pressureOXPHOS pressureGlobal restrictionFixed double bindAdaptive double bindAdaptive double bind + host support```These variables are **not clinical diets, drug regimens, or treatment recommendations**.They are computational perturbations designed to test biological principles.---## Therapeutic WindowThe main systems-level outcome is defined as:```textTherapeutic window=Tumour suppression-Host metabolic cost```This captures the central idea that a strategy should not be judged only by how strongly it suppresses tumour metabolism.A metabolically aggressive intervention may be undesirable if it damages skeletal muscle, nutritional reserve, mitochondrial function, immune competence, or systemic physiology to a similar or greater extent.---## Main Proof-of-Concept Findings### 1. Glycolysis and mitochondrial function can coexistThe model deliberately allows highly glycolytic cancer cells to retain substantial mitochondrial activity.This reflects contemporary cancer-metabolism biology and avoids the assumption that all Warburg-like tumours have non-functional mitochondria.### 2. Metabolic plasticity enables escapeAmong glucose-dependent virtual tumours, increasing metabolic plasticity strongly reduced simulated response to glucose-only pressure.This illustrates the proposed escape sequence:```textGlucose pressure      ↓Metabolic adaptation      ↓Glutamine / OXPHOS / fatty acids / lactate      ↓Continued tumour survival```### 3. Double-binding can outperform single-pathway pressureThe adaptive double-bind strategy identifies each tumour's two strongest metabolic dependencies and constrains them simultaneously.The model predicts a larger tumour-host metabolic asymmetry than single-pathway or nonspecific restriction strategies.### 4. Host protection mattersGlobal metabolic restriction can place substantial stress on normal tissues.When host metabolic support is incorporated into the model, the simulated therapeutic window improves.### 5. Cachexia is a major boundary conditionIncreasing host cachexia vulnerability reduces the usefulness of nonspecific global metabolic restriction.This supports treating skeletal muscle and nutritional reserve as active components of cancer-metabolism research.### 6. Mitochondrial respiration is not equivalent to apoptosisThe simulation treats mitochondrial respiratory capacity and apoptosis resistance as separate biological dimensions.This reflects the fact that cancer cells may maintain oxidative metabolism while suppressing intrinsic apoptotic signalling.---## Metabolic Dependency ScoreA future experimental implementation could integrate:```textTranscriptomics        +Proteomics        +Metabolomics        +Stable-isotope tracing        +OCR / ECAR        +Clinical and host metabolic variables        ↓Metabolic Dependency Score```Candidate pathways and biomarkers include:- GLUT1,- HK2,- PFKFB3,- PKM2,- LDHA,- MCT1,- MCT4,- GLS1,- CPT1A,- FASN,- electron-transport-chain complexes,- AMPK,- AKT,- mTOR,- MYC,- HIF-1α,- BCL-2,- MCL1,- BAX,- BAK.---## Machine LearningThe notebook includes a proof-of-concept machine-learning workflow using a random forest classifier.The model predicts synthetic response to adaptive metabolic double-binding from tumour metabolic features.This analysis is included to demonstrate the future workflow:```textMetabolic measurements        ↓Dependency features        ↓Predictive model        ↓Experimental validation        ↓Prospective external validation```High predictive performance in the synthetic dataset must **not** be interpreted as clinical predictive performance because the outcome is generated from the same computational framework.---## FiguresThe notebook generates 13 publication-resolution figures:1. Heterogeneous tumour fuel dependencies.2. Glycolysis versus mitochondrial capacity.3. Single-pathway versus double-bind tumour suppression.4. Therapeutic-window comparison.5. Metabolic phenotype × intervention-response heatmap.6. Metabolic plasticity and escape from glucose pressure.7. Mitochondrial capacity versus apoptosis resistance.8. Cachexia vulnerability and global metabolic restriction.9. PCA-based metabolic tumour stratification.10. Machine-learning ROC curve.11. Metabolic feature importance.12. Double-bind sensitivity analysis.13. Published CHALLENGE exercise-trial benchmark.---## Running the NotebookClone the repository:```bashgit clone https://github.com/mpetalcorin/metabolic-double-bind-cancer-control.gitcd metabolic-double-bind-cancer-control```Create a Python environment:```bashpython3 -m venv .venvsource .venv/bin/activate```Install the required packages:```bashpip install numpy pandas scipy matplotlib scikit-learn jupyter```Start Jupyter:```bashjupyter notebook```Open:```textnotebooks/cancer_metabolic_double_bind_proof_of_concept.ipynb```Run all cells from top to bottom.All simulations use:```pythonSEED = 42```for reproducibility.---## Proposed Experimental ValidationThe computational model generates experimentally testable predictions.A translational validation programme could include:1. extracellular flux analysis of OCR and ECAR,2. ATP-linked respiration and spare respiratory capacity,3. U-13C-glucose tracing,4. U-13C-glutamine tracing,5. labelled fatty-acid tracing,6. lactate production and uptake measurements,7. ATP and NADPH quantification,8. GSH/GSSG measurements,9. nucleotide-pool profiling,10. one-carbon and methionine-cycle metabolomics,11. apoptosis assays,12. matched tumour and non-malignant cell comparisons,13. patient-derived organoid studies,14. appropriate in vivo validation,15. prospective metabolic biomarker validation.The most important experimental question is:> **Can a tumour's dominant metabolic dependency and compensatory escape pathway be identified and constrained more selectively than host metabolism?**---## Key PubMed-Indexed LiteratureVander Heiden MG, Cantley LC, Thompson CB. Understanding the Warburg effect: the metabolic requirements of cell proliferation. *Science*. 2009;324:1029-1033. PMID: 19460998.  https://pubmed.ncbi.nlm.nih.gov/19460998/Sullivan LB, et al. Supporting aspartate biosynthesis is an essential function of respiration in proliferating cells. *Cell*. 2015. PMID: 26232224.  https://pubmed.ncbi.nlm.nih.gov/26232224/Gao X, et al. Dietary methionine influences therapy in mouse cancer models and alters human metabolism. *Nature*. 2019;572:397-401. PMID: 31367041.  https://pubmed.ncbi.nlm.nih.gov/31367041/Vernieri C, et al. Fasting-mimicking diet is safe and reshapes metabolism and antitumor immunity in patients with cancer. *Cancer Discovery*. 2022;12:90-107. PMID: 34789537.  https://pubmed.ncbi.nlm.nih.gov/34789537/Courneya KS, et al. Structured Exercise after Adjuvant Chemotherapy for Colon Cancer. *New England Journal of Medicine*. 2025. PMID: 40450658.  https://pubmed.ncbi.nlm.nih.gov/40450658/Additional PubMed-indexed references and benchmark notes are included directly in the notebook.---## Important LimitationsThis repository contains **synthetic data only**.The simulations are intended for:- hypothesis generation,- systems-level reasoning,- computational method development,- review-paper illustration,- experimental-design development.They do not demonstrate that any dietary intervention, fasting regimen, exercise programme, metabolic inhibitor, or nutrient-restriction strategy cures cancer.The model is deliberately simplified and does not yet incorporate the full complexity of:- tumour microenvironment,- stromal metabolism,- immune-cell metabolism,- tumour perfusion,- spatial nutrient gradients,- hypoxia,- clonal evolution,- treatment resistance,- pharmacokinetics,- pharmacodynamics,- toxicity,- inter-patient heterogeneity.Any clinical application would require rigorous experimental testing and prospective validation.---## Central HypothesisThe framework can be summarized as:```textMetabolic Double-Bind Cancer Control=Identify primary tumour dependency+Identify metabolic escape route+Constrain both+Preserve host metabolic fitness```or more simply:> **Weaken tumour metabolism while strengthening host metabolism.**---## LicenseA license can be added depending on the intended use of the repository. For open academic reuse, consider an MIT, BSD-3-Clause, or Apache-2.0 software license together with clear citation requirements for associated scientific publications.---## Author**Mark Ihrwell R. Petalcorin**Molecular Biology, Biochemistry, Cancer Biology, Bioenergetics, Machine Learning and Artificial Intelligence
