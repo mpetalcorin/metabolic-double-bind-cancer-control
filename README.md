@@ -1,7 +1,7 @@
 # Metabolic Double-Bind Cancer Control
 
 A computational proof-of-concept framework for the **Metabolic Double-Bind Cancer Control hypothesis**, integrating tumour metabolic plasticity, glycolysis, oxidative phosphorylation, glutamine metabolism, fatty-acid metabolism, lactate shuttling, mitochondrial function, apoptosis resistance, host metabolic fitness, exercise, nutrition, and machine learning.
-
+<img width="1448" height="1086" alt="Metabolic Double-Bind CancerControl" src="https://github.com/user-attachments/assets/4356910a-d70a-4bc3-9d5a-a1c3729677e1" />
 The central hypothesis is:
 
 > **Preserve and strengthen host metabolic fitness while identifying and constraining the tumour's dominant metabolic dependency together with its principal metabolic escape route.**
